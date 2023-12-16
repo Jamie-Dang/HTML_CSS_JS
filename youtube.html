@@ -20,18 +20,33 @@
         vertical-align: top;
         margin-right: 15px;
       }
+      .channel-picture {
+        display: inline-block;
+      }
+      .video-info {
+        display: inline-block;
+      }
     </style>
   </head>
   <body>
     <input class="search-bar" type="text" placeholder="Search" />
 
     <div class="video-preview">
-      <img class="thumbnail" src="thumbnails/thumbnail-1.webp" />
-      <p class="video-title">
-        Talking Tech and AI with Google CEO Sundar Pichai!
-      </p>
-      <p class="video-author">Marques Brownlee</p>
-      <p class="video-stats">3.4M views &#183; 6 months ago</p>
+      <div>
+        <img class="thumbnail" src="thumbnails/thumbnail-1.webp" />
+      </div>
+      <div>
+        <div class="channel-picture">
+          <img src="channel-pictures/channel-1.jpeg" alt="" />
+        </div>
+        <div class="video-info">
+          <p class="video-title">
+            Talking Tech and AI with Google CEO Sundar Pichai!
+          </p>
+          <p class="video-author">Marques Brownlee</p>
+          <p class="video-stats">3.4M views &#183; 6 months ago</p>
+        </div>
+      </div>
     </div>
     <div class="video-preview">
       <img class="thumbnail" src="thumbnails/thumbnail-2.webp" />
@@ -54,4 +69,7 @@
 <!-- <div> = division = just a box: is a block element: containers
     <div> can contain other elements
 -->
-<!--  -->
+<!-- Nested Layouts Technique (layout inside layout)
+  1. Vertical Layout
+  2. Horizontal Layout
+-->
