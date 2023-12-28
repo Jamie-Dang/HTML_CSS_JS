@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+    <button onclick="subscribe();" class="js-subscribe-button">
+      Subscribe
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <!-- clicks, keydowns => events
+        onclick, onkeydown => event listeners
+        event listeners: 
+        onclick = click
+        onkeydown = key press
+        onscroll = scrolling
+        onmouseenter = hovering over
+        onmouseleave =  stop hovering over
+        ... and many more
+        event : every event listener gets an event object
+
+        window = browser
+        window.document
+        window.console
+        window.console.log('window')
+        window.alert
+        because window has a shortcut so no need to type it out (it will be added automatically)
+
+        10. HTML, CSS, and JavaScript together.
+    -->
+    <input
+      placeholder="Cost of order"
+      class="js-cost-input"
+      onkeydown="handleCostKeydown()"
+    />
+    <button onclick="calculateTotal()">Calculate</button>
+    <p class="js-total-cost"></p>
+    <script>
+      function handleCostKeydown() {
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-cost-input");
+        // Remember: whenever we get the a value from the DOM, the value will be a string.
+        let cost = Number(inputElement.value);
+
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+        document.querySelector(".js-total-cost").innerHTML = `$${cost}`;
+      }
+      function subscribe() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
+
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerHTML = "Subscribed";
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+        }
+      }
+    </script>
+  </body>
+</html>
